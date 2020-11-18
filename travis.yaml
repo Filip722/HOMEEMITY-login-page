@@ -1,0 +1,16 @@
+language: dart
+dist: focal
+addons:
+  apt:
+    packages:
+      - lib32stdc++6
+before_script:
+  - git clone https://github.com/flutter/flutter.git -b beta
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+  - flutter config --enable-web
+  - ./flutter/bin/flutter doctor
+script:
+    - flutter build web
+cache:
+  directories:
+    - $HOME/.pub-cache
