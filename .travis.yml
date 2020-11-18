@@ -1,5 +1,6 @@
-language: dart
-dist: focal
+os:
+  - linux
+sudo: false
 addons:
   apt:
     packages:
