@@ -1,18 +1,20 @@
-os:
-  - linux
-sudo: false
+language: 
+  - dart
+dart:
+  - stable
 addons:
   apt:
+    sources:
+      - ubuntu-toolchain-r-test 
     packages:
-      - lib32stdc++6
+      - libstdc++6
+      - fonts-droid-fallback
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta
-  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
-  - flutter config --enable-web
+  - ./flutter/bin/flutterflutter config --enable-web
   - ./flutter/bin/flutter doctor
 script:
-    - flutter pub get
-    - flutter build web
+    - ./flutter/bin/flutter test
 cache:
   directories:
     - $HOME/.pub-cache
