@@ -10,6 +10,7 @@ before_script:
   - flutter config --enable-web
   - ./flutter/bin/flutter doctor
 script:
+    - flutter pub get
     - flutter build web
 cache:
   directories:
