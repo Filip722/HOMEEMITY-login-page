@@ -23,5 +23,5 @@ jobs:
     - run: flutter build web
     - uses: actions/upload-artifact@v2
       with:
-        name: web_app
-        path: build/web/output/
+        name: builds/web
+        path: build/web/
